@@ -96,7 +96,7 @@ p {
     width: 0;
     height: 3px;
     background: var(--primary);
-    transition: width 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94); /* Smooth Cubic Transition */
+    transition: width 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
     border-radius: 2px;
 }
 
@@ -105,27 +105,16 @@ p {
     width: 100%;
 }
 
-/* Hero Section - Geometrik ve Dinamik */
+/* Hero Section - Ankara Harita Arka Planlı */
 .hero {
     min-height: 100vh;
     display: flex;
     align-items: center;
-    background: var(--bg-dark);
+    background: 
+        linear-gradient(rgba(248, 249, 250, 0.7), rgba(248, 249, 250, 0.95)),
+        url('assets/ankara.jpg') center/cover no-repeat;
     position: relative;
     padding-top: 80px;
-    overflow: hidden;
-}
-
-.hero::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 100 100"><defs><pattern id="a" width="10" height="10" patternUnits="userSpaceOnUse"><path fill="rgba(0,123,255,0.05)" d="M-3.3-1.1L-5.8,1.4l5,5l2.5-2.5l-5-5L-3.3-1.1z"/></pattern></defs><rect width="100" height="100" fill="url(%23a)"/></svg>');
-    opacity: 0.1;
-    z-index: 1;
 }
 
 .hero-content {
@@ -173,7 +162,7 @@ p {
     line-height: 1.7;
 }
 
-/* Buttons - 3D ve Ripple Efektli */
+/* Buttons */
 .btn {
     padding: 15px 30px;
     border: none;
@@ -221,7 +210,7 @@ p {
 
 .floating-card {
     background: var(--bg-dark);
-    border-radius: 50%; /* Yuvarlak Yapı */
+    border-radius: 50%;
     width: 400px;
     height: 400px;
     display: flex;
@@ -231,18 +220,24 @@ p {
     overflow: hidden;
     margin: 0 auto;
     border: 5px solid white;
+    position: relative;
 }
 
 .floating-card img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    opacity: 0; /* JS ile yüklenirken animasyonlu açılacak */
-    transform: scale(0.8);
-    transition: all 0.7s cubic-bezier(0.165, 0.84, 0.44, 1);
+    border-radius: 50%;
+    transform: scale(1.05);
+    opacity: 1;
+    transition: transform 0.6s ease;
 }
 
-/* Quick Info Section - Kartlara Yönelik İyileştirmeler */
+.floating-card:hover img {
+    transform: scale(1.1);
+}
+
+/* Quick Info Section */
 .quick-info {
     padding: 60px 2rem;
     background: var(--bg);
@@ -267,7 +262,7 @@ p {
 }
 
 .info-card:hover {
-    transform: translateY(-10px) scale(1.02);
+    transform: translateY(-5px);
     box-shadow: var(--shadow-lg);
     border-color: var(--primary);
 }
@@ -293,9 +288,9 @@ p {
     font-size: 0.95rem;
 }
 
-/* Company Hero - Koyu ve Premium */
+/* Company Hero */
 .company-hero {
-    background: #0f172a; /* Koyu Mavi/Siyah Arka Plan */
+    background: #0f172a;
     color: white;
     padding: 140px 2rem 80px;
     position: relative;
@@ -316,15 +311,13 @@ p {
 
 .company-logo-container {
     margin-bottom: 2rem;
-    text-align: left; /* Mobil görünüm için center yapılabilir */
+    text-align: left;
 }
 
 .company-logo {
-    /* Logonun boyutunu ayarlama */
-    max-width: 400px; 
+    max-width: 400px;
     width: 100%;
     height: auto;
-    /* Logonun karanlık arka planda daha iyi görünmesi için (altın rengini korurken) */
     filter: drop-shadow(0 0 10px rgba(0,0,0,0.5));
 }
 
@@ -339,11 +332,9 @@ p {
     z-index: 2;
 }
 
-/* Eski H1 Başlık stili, logoyu kullandığımız için artık gizli */
 .company-title {
-    display: none; 
+    display: none;
 }
-
 
 .company-subtitle {
     font-size: 1.4rem;
@@ -391,7 +382,7 @@ p {
     font-size: 0.85rem;
 }
 
-/* Floating Cards - Daha Hafif Parallax Etkisi İçin Hazırlandı */
+/* Floating Cards */
 .floating-cards {
     position: relative;
     width: 450px;
@@ -415,7 +406,7 @@ p {
 .card-2 { bottom: 20px; right: 10px; }
 .card-3 { top: 50%; left: 50%; transform: translate(-50%, -50%); width: 220px; }
 
-/* Process Steps - Yükseltilmiş Kartlar */
+/* Process Steps */
 .process-section {
     padding: 80px 2rem;
     background: var(--bg);
@@ -444,7 +435,7 @@ p {
     transition: all 0.3s ease;
     position: relative;
     overflow: hidden;
-    border-bottom: 5px solid var(--primary); /* Daha kurumsal çizgi */
+    border-bottom: 5px solid var(--primary);
 }
 
 .step-card:hover {
@@ -467,7 +458,7 @@ p {
     box-shadow: 0 5px 15px rgba(0,123,255,0.3);
 }
 
-/* Background Page Improvements */
+/* Background Page */
 .page-header {
     padding: 140px 2rem 60px;
     text-align: center;
@@ -526,6 +517,7 @@ p {
     gap: 1rem;
     margin-top: 1rem;
 }
+
 .hobby-item {
     display: flex;
     align-items: center;
@@ -536,6 +528,7 @@ p {
     font-weight: 600;
     color: var(--text);
 }
+
 .hobby-icon {
     font-size: 1.2rem;
 }
@@ -544,16 +537,17 @@ p {
     list-style-type: none;
     padding-left: 0;
 }
+
 .interests-list li {
     padding: 0.5rem 0;
     border-bottom: 1px dashed #e0e0e0;
 }
+
 .interests-list li:last-child {
     border-bottom: none;
 }
 
-
-/* Technologies Page Improvements */
+/* Technologies Page */
 .technologies-content {
     padding: 60px 2rem;
     background: var(--bg);
@@ -591,7 +585,6 @@ p {
 
 .tech-table tr {
     transition: background 0.3s ease;
-    transform: scale(1); /* JS Hover Efekti için Başlangıç */
 }
 
 .tech-table tr:nth-child(even) {
@@ -652,64 +645,39 @@ p {
     color: var(--text-light);
 }
 
-/* Animasyonlu kartlar için başlangıç durumu (Görünmezlik Fix'i) */
+/* Animasyonlu kartlar için başlangıç durumu */
 .info-card, 
 .about-card, 
 .step-card, 
 .learning-card {
-    /* Başlangıçta Görünmez Yapma (JS tarafından tetiklenmek üzere) */
-    opacity: 0; 
-    transition: opacity 0.5s ease, transform 0.5s ease, box-shadow 0.3s ease;
+    opacity: 0;
+    transition: opacity 0.5s ease, transform 0.5s ease;
 }
 
-/* Hakkımda (about-card) için başlangıç kaydırma */
 .about-card {
     transform: translateX(-50px);
 }
 
-/* Diğer tüm kartlar için başlangıç kaydırma */
 .info-card, 
 .step-card, 
 .learning-card {
     transform: translateY(30px);
 }
 
-/* Animasyon Tetiklendiğinde (JS tarafından eklenir) */
+/* Animasyon Tetiklendiğinde */
 .info-card.animate-in,
 .step-card.animate-in,
 .learning-card.animate-in {
     opacity: 1;
-    transform: translateY(0); /* Transform sıfırlandı */
-    animation: fadeInUp 1s ease forwards; /* Yükselme animasyonu */
+    transform: translateY(0);
 }
 
 .about-card.animate-in {
     opacity: 1;
-    transform: translateX(0); /* Transform sıfırlandı */
-    animation: slideInLeft 1s ease forwards; /* Soldan kayma animasyonu */
+    transform: translateX(0);
 }
 
 /* Animations */
-@keyframes slideInLeft {
-    from {
-        opacity: 0;
-        transform: translateX(-50px);
-    }
-    to {
-        opacity: 1;
-        transform: translateX(0);
-    }
-}
-
-@keyframes float {
-    0%, 100% {
-        transform: translateY(0px) rotate(0deg);
-    }
-    50% {
-        transform: translateY(-20px) rotate(1deg);
-    }
-}
-
 @keyframes fadeInUp {
     from {
         opacity: 0;
@@ -735,7 +703,7 @@ p {
     }
 
     .hero-image {
-        order: -1; /* Resmi yukarı taşır */
+        order: -1;
     }
 
     .hero-title {
@@ -758,7 +726,7 @@ p {
     }
     
     .company-logo-container {
-        text-align: center; /* Logoyu mobil cihazda ortala */
+        text-align: center;
     }
 }
 
@@ -767,16 +735,12 @@ p {
         font-size: 2.5rem;
     }
     
-    .company-title {
-        font-size: 2.5rem;
-    }
-    
     .company-logo {
         max-width: 300px;
     }
 
     .nav-menu {
-        display: none; /* Mobil menü için JS ile açılır menü eklenebilir, şimdilik gizli */
+        display: none;
     }
 
     .hero-buttons {

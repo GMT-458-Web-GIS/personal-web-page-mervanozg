@@ -44,20 +44,6 @@ document.addEventListener('DOMContentLoaded', function() {
     elementsToAnimate.forEach(el => {
         observer.observe(el);
     });
-
-    // Add loading animation to images
-    const images = document.querySelectorAll('.floating-card img');
-    images.forEach(img => {
-        img.addEventListener('load', function() {
-            this.style.opacity = '1';
-            this.style.transform = 'scale(1)';
-        });
-        
-        img.style.opacity = '0';
-        img.style.transform = 'scale(0.9)';
-        this.style.transition = 'all 0.7s cubic-bezier(0.165, 0.84, 0.44, 1)';
-    });
-
     // Add hover effects to table rows
     const tableRows = document.querySelectorAll('.tech-table tr');
     tableRows.forEach(row => {
