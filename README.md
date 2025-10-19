@@ -8,7 +8,7 @@ The primary goal of this assignment is to demonstrate fundamental web developmen
 
 GitHub Repository URL: https://github.com/GMT-458-Web-GIS/personal-web-page-mervanozg
 
-Live Deployment (GitHub Pages): 
+Live Deployment (GitHub Pages):  https://mervanozg.github.io/personal_web_page/
 
 ## ⚙️ Technical Requirements and Fulfillment
 | **Objective** | **Fulfillment and Implementation** |
