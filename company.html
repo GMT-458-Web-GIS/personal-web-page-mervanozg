@@ -6,25 +6,41 @@
     <title>MERYKSI CO. - Premium E-commerce</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"> 
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/ol@8.2.0/ol.css">
 </head>
 <body>
     <nav class="navbar">
         <div class="nav-container">
-            <div class="nav-logo">Mervan Özgönül</div>
+            
+            <div class="nav-contact">
+                <a href="tel:+905415773689" aria-label="Telefon Numarası">
+                    <i class="fas fa-phone"></i> <span>+90 541 577 3689</span>
+                </a>
+                <a href="mailto:mervanozgonul@gmail.com" aria-label="E-posta Adresi">
+                    <i class="fas fa-envelope"></i> <span>mervanozgonul@gmail.com</span>
+                </a>
+            </div>
+
             <ul class="nav-menu">
                 <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
                 <li class="nav-item"><a href="background.html" class="nav-link">About</a></li>
                 <li class="nav-item"><a href="technologies.html" class="nav-link">Technologies</a></li>
                 <li class="nav-item"><a href="company.html" class="nav-link active">MERYKSI CO.</a></li>
             </ul>
+
+            <div class="nav-social">
+                <a href="https://www.linkedin.com/in/mervanozgonul/" target="_blank" aria-label="LinkedIn Profili"><i class="fab fa-linkedin"></i></a>
+                <a href="https://www.instagram.com/mervanozg/" target="_blank" aria-label="Instagram Profili"><i class="fab fa-instagram"></i></a>
+                <a href="https://github.com/mervanozg" target="_blank" aria-label="GitHub Profili"><i class="fab fa-github"></i></a>
+            </div>
+
         </div>
     </nav>
 
     <section class="company-hero">
         <div class="company-hero-content">
             <div class="company-text">
-                
                 <div class="company-logo-container">
                     <img src="assets/logo.png" alt="MERYKSI CO. Logo" class="company-logo">
                 </div>
@@ -43,7 +59,7 @@
                     <div class="stat-card">
                         <div class="stat-icon">🌍</div>
                         <h3>Global Sales</h3>
-                        <p>Reaching 50+ countries worldwide</p>
+                        <p>Reaching 50+ citys worldwide</p>
                     </div>
                     <div class="stat-card">
                         <div class="stat-icon">⚡</div>
@@ -85,6 +101,28 @@
         </div>
     </section>
 
+    <section class="global-sales-section">
+        <div class="container">
+            <h2>🌍 Our Global Reach</h2>
+            <p class="section-subtitle">Sales distribution across 70+ cities worldwide</p>
+            <div id="salesMap" class="sales-map-container"></div>
+            <div class="sales-stats">
+                <div class="sales-stat">
+                    <h3>5+</h3>
+                    <p>Countries</p>
+                </div>
+                <div class="sales-stat">
+                    <h3>94+</h3>
+                    <p>Total Sales</p>
+                </div>
+                <div class="sales-stat">
+                    <h3>3</h3>
+                    <p>Continents</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <section id="process" class="process-section">
         <h2>Our Process</h2>
         <div class="process-steps">
@@ -100,7 +138,6 @@
             </div>
             <div class="step-card">
                 <div class="step-number">3</div>
-                <h3>Sales on Etsy</h3>
                 <p>Our customers easily place orders from our Etsy shop and shop with secure payment systems.</p>
             </div>
             <div class="step-card">
@@ -108,9 +145,11 @@
                 <h3>Automatic Delivery</h3>
                 <p>Printify automatically produces the order and delivers it directly to our customer. The process is completely automated!</p>
             </div>
+            
         </div>
     </section>
 
+    <script src="https://cdn.jsdelivr.net/npm/ol@8.2.0/dist/ol.js"></script>
     <script src="script.js"></script>
 </body>
 </html>

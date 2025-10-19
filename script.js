@@ -157,3 +157,75 @@ style.textContent = `
     }
 `;
 document.head.appendChild(style);
+// Global Sales Map
+function initSalesMap() {
+    const salesData = [
+        { country: "United States", sales: 88, coords: [-95.7129, 37.0902] },
+        { country: "Germany", sales: 2, coords: [10.4515, 51.1657] },
+        { country: "Spain", sales: 2, coords: [-3.7492, 40.4637] },
+        { country: "Italy", sales: 1, coords: [12.5674, 41.8719] },
+        { country: "China", sales: 1, coords: [104.1954, 35.8617] }
+    ];
+
+    const map = new ol.Map({
+        target: 'salesMap',
+        layers: [
+            new ol.layer.Tile({
+                source: new ol.source.OSM({
+                    attributions: ['© OpenStreetMap contributors']
+                })
+            })
+        ],
+        view: new ol.View({
+            center: ol.proj.fromLonLat([0, 20]),
+            zoom: 2
+        })
+    });
+
+    // Sales markers
+    salesData.forEach(data => {
+        const marker = new ol.Overlay({
+            position: ol.proj.fromLonLat(data.coords),
+            positioning: 'center-center',
+            element: document.createElement('div'),
+            stopEvent: false
+        });
+        
+        const markerElement = marker.getElement();
+        markerElement.className = 'map-marker';
+        markerElement.innerHTML = data.sales;
+        markerElement.title = `${data.country}: ${data.sales} sales`;
+        
+        // Marker boyutunu satış sayısına göre ayarla
+        const size = 30 + (data.sales * 0.3);
+        markerElement.style.width = `${size}px`;
+        markerElement.style.height = `${size}px`;
+        markerElement.style.fontSize = `${0.7 + (data.sales * 0.01)}rem`;
+        
+        // Amerika için özel stil (en fazla satış)
+        if (data.country === "United States") {
+            markerElement.style.background = 'var(--accent)';
+            markerElement.style.fontSize = '1.1rem';
+        }
+        
+        map.addOverlay(marker);
+    });
+
+    // Popup için
+    const popup = new ol.Overlay({
+        element: document.getElementById('popup'),
+        positioning: 'bottom-center',
+        stopEvent: false
+    });
+    map.addOverlay(popup);
+}
+
+// Sayfa yüklendiğinde haritayı başlat
+document.addEventListener('DOMContentLoaded', function() {
+    // Diğer mevcut kodlar...
+    
+    // Sales map'i başlat
+    if (document.getElementById('salesMap')) {
+        initSalesMap();
+    }
+});

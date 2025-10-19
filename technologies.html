@@ -6,26 +6,122 @@
     <title>Technologies - Mervan Özgönül</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        /* Hero section'ı tam ortalamak için ek stiller */
+        .centered-hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            background: 
+                linear-gradient(rgba(248, 249, 250, 0.7), rgba(248, 249, 250, 0.95)),
+                url('assets/ankara.jpg') center/cover no-repeat;
+            position: relative;
+            padding-top: 80px;
+        }
+        
+        .centered-hero-content {
+            max-width: 800px;
+            padding: 2rem;
+        }
+        
+        .centered-hero .hero-title {
+            font-size: 4rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .centered-hero .hero-subtitle {
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .centered-hero .hero-description {
+            font-size: 1.2rem;
+            margin-bottom: 2.5rem;
+            line-height: 1.6;
+        }
+        
+        .centered-hero .hero-buttons {
+            justify-content: center;
+        }
+        
+        /* Responsive düzenlemeler */
+        @media (max-width: 768px) {
+            .centered-hero .hero-title {
+                font-size: 3rem;
+            }
+            
+            .centered-hero .hero-subtitle {
+                font-size: 1.3rem;
+            }
+            
+            .centered-hero .hero-description {
+                font-size: 1.1rem;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .centered-hero .hero-title {
+                font-size: 2.5rem;
+            }
+            
+            .centered-hero .hero-subtitle {
+                font-size: 1.1rem;
+            }
+            
+            .centered-hero .hero-description {
+                font-size: 1rem;
+            }
+        }
+    </style>
 </head>
 <body>
     <nav class="navbar">
         <div class="nav-container">
-            <div class="nav-logo">Mervan Özgönül</div>
+            
+            <div class="nav-contact">
+                <a href="tel:+905415773689" aria-label="Telefon Numarası">
+                    <i class="fas fa-phone"></i> <span>+90 541 577 3689</span>
+                </a>
+                <a href="mailto:mervanozgonul@gmail.com" aria-label="E-posta Adresi">
+                    <i class="fas fa-envelope"></i> <span>mervanozgonul@gmail.com</span>
+                </a>
+            </div>
+
             <ul class="nav-menu">
                 <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
                 <li class="nav-item"><a href="background.html" class="nav-link">About</a></li>
                 <li class="nav-item"><a href="technologies.html" class="nav-link active">Technologies</a></li>
                 <li class="nav-item"><a href="company.html" class="nav-link">MERYKSI CO.</a></li>
             </ul>
+
+            <div class="nav-social">
+                <a href="https://www.linkedin.com/in/mervanozgonul/" target="_blank" aria-label="LinkedIn Profili"><i class="fab fa-linkedin"></i></a>
+                <a href="https://www.instagram.com/mervanozg/" target="_blank" aria-label="Instagram Profili"><i class="fab fa-instagram"></i></a>
+                <a href="https://github.com/mervanozg" target="_blank" aria-label="GitHub Profili"><i class="fab fa-github"></i></a>
+            </div>
+
         </div>
     </nav>
 
-    <section class="page-header">
-        <h1>Technologies</h1>
-        <p>Technologies I know and am currently learning</p>
+    <!-- ORTALANMIŞ Hero Section -->
+    <section class="centered-hero">
+        <div class="centered-hero-content">
+            <h1 class="hero-title">Technologies & <span class="highlight">Skills</span></h1>
+            <p class="hero-subtitle">Mastering the tools that shape the future of geospatial technology</p>
+            <p class="hero-description">Explore my technical expertise in GIS, programming, and cutting-edge technologies that drive innovation in geomatics engineering and digital solutions.</p>
+            <div class="hero-buttons">
+                <a href="#technologies" class="btn btn-primary">
+                    <i class="fas fa-code"></i>
+                    View Technologies
+                </a>
+            </div>
+        </div>
     </section>
 
-    <section class="technologies-content">
+    <section id="technologies" class="technologies-content">
         <div class="tech-table-container">
             <table class="tech-table">
                 <thead>
